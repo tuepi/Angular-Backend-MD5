@@ -1,1 +1,20 @@
-<p>list-product works!</p>
+<h1>Danh sách sản phẩm</h1>
+<table>
+  <tr>
+    <td>STT</td>
+    <td>Tên</td>
+    <td>Giá</td>
+    <td>Mô tả</td>
+    <td>Chỉnh sửa</td>
+    <td>Xóa</td>
+  </tr>
+  <tr *ngFor="let product of products; index as i">
+    <td>{{i + 1}}</td>
+    <td>{{product.name}}</td>
+    <td>{{product.price}}</td>
+    <td>{{product.category.name}}</td>
+    <td><a [routerLink]="['/edit', product.id]">Sửa</a></td>
+    <td><button (click)="deleteProduct(product.id)">Xóa</button></td>
+  </tr>
+</table>
+<a routerLink="/create">Add</a>

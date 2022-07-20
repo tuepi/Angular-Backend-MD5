@@ -1,6 +1,7 @@
+<p>create-product works!</p>
 <app-list-product></app-list-product>
 <p>Edit Product</p>
-<form [formGroup]="updateForm" (ngSubmit)="editProduct()">
+<form [formGroup]="createForm" (ngSubmit)="create()">
   <table>
     <tr>
       <td>Tên sản phẩm:</td>
@@ -22,3 +23,4 @@
     </tr>
   </table>
 </form>
+

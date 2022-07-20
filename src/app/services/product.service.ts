@@ -18,4 +18,21 @@ export class ProductService {
   getAll(): Observable<Product[]> {
     return this.httpClient.get<Product[]>(API_URL);
   }
+
+  getById(id : any) : Observable<Product> {
+    return this.httpClient.get<Product>(API_URL + `/${id}`)
+  }
+
+  create(product: any) : Observable<any> {
+    return this.httpClient.post(API_URL, product);
+  }
+
+  editProduct(id: any , product: any): Observable<any> {
+    return this.httpClient.put(API_URL + `/${id}` , product);
+  }
+
+  deleteProduct(id : any) : Observable<any> {
+    return this.httpClient.delete(API_URL + `${id}`);
+  }
+
 }
