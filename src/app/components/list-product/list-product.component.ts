@@ -33,14 +33,14 @@ export class ListProductComponent implements OnInit {
   }
 
   deleteProduct(id : any) {
-    this.productService.deleteProduct(id).subscribe(() => {
-      confirm("Bạn có xác nhận xóa?");
-      this.router.navigateByUrl('/')
-      this.getAll();
-    }, error => {
-      console.log(error);
-    });
+    if (confirm("Bạn có xác nhận xóa?")) {
+      this.productService.deleteProduct(id).subscribe(() => {
+        this.router.navigateByUrl('/')
+        this.getAll();
+      }, error => {
+        console.log(error);
+      });
+    }
   }
-
 
 }

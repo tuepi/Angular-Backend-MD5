@@ -12,7 +12,6 @@ export class CategoryService {
 
   constructor(private httpClient : HttpClient) { }
 
-
   getAll(): Observable<any> {
     return this.httpClient.get(API_URL);
   }

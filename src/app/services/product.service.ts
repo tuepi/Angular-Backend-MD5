@@ -38,4 +38,5 @@ export class ProductService {
   findByName(name : any) {
     return this.httpClient.get(API_URL + `/find-by-name/${name}`);
   }
+
 }

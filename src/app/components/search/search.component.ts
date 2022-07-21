@@ -1,14 +1,13 @@
 import {Component, Input, OnInit} from '@angular/core';
-import {ProductService} from "../../services/product.service";
 import {Product} from "../../models/product";
-import {ListProductComponent} from "../list-product/list-product.component";
+import {ProductService} from "../../services/product.service";
 
 @Component({
-  selector: 'app-navbar',
-  templateUrl: './navbar.component.html',
-  styleUrls: ['./navbar.component.css']
+  selector: 'app-search',
+  templateUrl: './search.component.html',
+  styleUrls: ['./search.component.css']
 })
-export class NavbarComponent implements OnInit {
+export class SearchComponent implements OnInit {
   name : any;
   @Input() products : Product[] | any;
 
@@ -22,5 +21,4 @@ export class NavbarComponent implements OnInit {
       this.products = result;
     });
   }
-
 }
