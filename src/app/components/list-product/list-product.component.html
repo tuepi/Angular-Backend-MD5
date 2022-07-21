@@ -1,20 +1,29 @@
-<h1>Danh sách sản phẩm</h1>
-<table>
-  <tr>
-    <td>STT</td>
-    <td>Tên</td>
-    <td>Giá</td>
-    <td>Mô tả</td>
-    <td>Chỉnh sửa</td>
-    <td>Xóa</td>
-  </tr>
-  <tr *ngFor="let product of products; index as i">
-    <td>{{i + 1}}</td>
-    <td>{{product.name}}</td>
-    <td>{{product.price}}</td>
-    <td>{{product.category.name}}</td>
-    <td><a [routerLink]="['/edit', product.id]">Sửa</a></td>
-    <td><button (click)="deleteProduct(product.id)">Xóa</button></td>
-  </tr>
-</table>
-<a routerLink="/create">Add</a>
+<div class="row">
+  <div class="col-3"></div>
+  <div class="col-9">
+    <h1>List Product</h1>
+    <table class="table">
+    <thead class="thead-light">
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Name</th>
+      <th scope="col">Price</th>
+      <th scope="col">Category</th>
+      <th scope="col">Edit</th>
+      <th scope="col">Delete</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let product of products; index as i">
+      <th scope="row">{{i + 1}}</th>
+      <td>{{product.name}}</td>
+      <td>{{product.price}}</td>
+      <td>{{product.category.name}}</td>
+      <td><button class="btn btn-primary"  data-toggle="modal" data-target="#exampleModal" [routerLink]="['/edit', product.id]">Sửa</button></td>
+      <td><button class="btn btn-danger" (click)="deleteProduct(product.id)">Xóa</button></td>
+    </tr>
+    </tbody>
+  </table>
+  </div>
+</div>
+

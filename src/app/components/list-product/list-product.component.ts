@@ -16,6 +16,10 @@ export class ListProductComponent implements OnInit {
   }
 
   ngOnInit(){
+    this.getAll();
+  }
+
+  getAll() {
     this.productService.getAll().subscribe(result => {
       this.products = result;
       console.log(result);
@@ -28,6 +32,7 @@ export class ListProductComponent implements OnInit {
     this.productService.deleteProduct(id).subscribe(() => {
       confirm("Bạn có xác nhận xóa?");
       this.router.navigateByUrl('/')
+      this.getAll();
     }, error => {
       console.log(error);
     });

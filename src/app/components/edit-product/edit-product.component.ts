@@ -58,6 +58,8 @@ export class EditProductComponent implements OnInit {
     }
     this.productService.editProduct(this.id, this.product).subscribe(() => {
       this.router.navigateByUrl("/")
+      // @ts-ignore
+      $("#exampleModal").modal("hide")
       alert("ok")
     }, error => {
       console.log(error)

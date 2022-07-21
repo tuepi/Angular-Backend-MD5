@@ -8,13 +8,15 @@ import { ListProductComponent } from './components/list-product/list-product.com
 import { EditProductComponent } from './components/edit-product/edit-product.component';
 import {ReactiveFormsModule} from "@angular/forms";
 import { CreateProductComponent } from './components/create-product/create-product.component';
+import { NavbarComponent } from './components/navbar/navbar.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     ListProductComponent,
     EditProductComponent,
-    CreateProductComponent
+    CreateProductComponent,
+    NavbarComponent
   ],
   imports: [
     BrowserModule,

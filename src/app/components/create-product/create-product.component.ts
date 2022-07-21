@@ -27,6 +27,7 @@ export class CreateProductComponent implements OnInit {
   });
 
   ngOnInit(): void {
+    this.productService.getAll();
     this.getAllCategories();
   }
 
@@ -49,11 +50,11 @@ export class CreateProductComponent implements OnInit {
     this.productService.create(this.product).subscribe(() => {
       alert("ok");
       this.router.navigateByUrl('/')
+      // @ts-ignore
+      $("#exampleModal").modal("hide")
     }, error => {
       console.log(error);
     });
-
-
   }
 
 }

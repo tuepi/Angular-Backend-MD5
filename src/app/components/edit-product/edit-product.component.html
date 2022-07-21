@@ -1,24 +1,64 @@
+<!--<app-list-product></app-list-product>-->
+<!--<p>Edit Product</p>-->
+<!--<form [formGroup]="updateForm" (ngSubmit)="editProduct()">-->
+<!--  <table>-->
+<!--    <tr>-->
+<!--      <td>Tên sản phẩm:</td>-->
+<!--      <td><input type="text" formControlName="name"></td>-->
+<!--    </tr>-->
+<!--    <tr>-->
+<!--      <td>Giá sản phẩm</td>-->
+<!--      <td><input type="text" formControlName="price"></td>-->
+<!--    </tr>-->
+<!--    <tr>-->
+<!--      <td>Loaị sản phẩm</td>-->
+<!--      <select formControlName="category">-->
+<!--        <option *ngFor="let category of categories" value="{{category.id}}">{{category.name}}</option>-->
+<!--      </select>-->
+<!--    </tr>-->
+<!--    <tr>-->
+<!--      <td></td>-->
+<!--      <td><button type="submit">Tạo mới</button></td>-->
+<!--    </tr>-->
+<!--  </table>-->
+<!--</form>-->
+
 <app-list-product></app-list-product>
-<p>Edit Product</p>
-<form [formGroup]="updateForm" (ngSubmit)="editProduct()">
-  <table>
-    <tr>
-      <td>Tên sản phẩm:</td>
-      <td><input type="text" formControlName="name"></td>
-    </tr>
-    <tr>
-      <td>Giá sản phẩm</td>
-      <td><input type="text" formControlName="price"></td>
-    </tr>
-    <tr>
-      <td>Loaị sản phẩm</td>
-      <select formControlName="category">
-        <option *ngFor="let category of categories" value="{{category.id}}">{{category.name}}</option>
-      </select>
-    </tr>
-    <tr>
-      <td></td>
-      <td><button type="submit">Tạo mới</button></td>
-    </tr>
-  </table>
-</form>
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <form [formGroup]="updateForm" (ngSubmit)="editProduct()">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Add Product</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+
+          <div class="form-row">
+            <div class="form-group col-md-12" id="input">
+              <label for="name">Name</label>
+              <input type="text" class="form-control" formControlName="name" id="name">
+              <label for="price">Price</label>
+              <input type="text" class="form-control" formControlName="price" id="price">
+            </div>
+            <div class="form-group col-md-12">
+              <label for="cate">Category</label>
+              <select id="cate" class="form-control" formControlName="category">
+                <option *ngFor="let category of categories" value="{{category.id}}">{{category.name}}</option>
+              </select>
+            </div>
+          </div>
+        </div>
+        <div class="alert alert-success hide">
+
+        </div>
+        <div class="modal-footer" id="but">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          <button type="submit" class="btn btn-primary">Save</button>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
