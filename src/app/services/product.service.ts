@@ -35,4 +35,7 @@ export class ProductService {
     return this.httpClient.delete(API_URL + `/${id}`);
   }
 
+  findByName(name : any) {
+    return this.httpClient.get(API_URL + `/find-by-name/${name}`);
+  }
 }
