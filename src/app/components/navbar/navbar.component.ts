@@ -9,18 +9,12 @@ import {ListProductComponent} from "../list-product/list-product.component";
   styleUrls: ['./navbar.component.css']
 })
 export class NavbarComponent implements OnInit {
-  name : any;
-  @Input() products : Product[] | any;
 
-  constructor(private productService : ProductService) { }
+  constructor() { }
 
   ngOnInit(): void {
   }
 
-  findByName(name: any) {
-    this.productService.findByName(name).subscribe(result => {
-      this.products = result;
-    });
-  }
+
 
 }

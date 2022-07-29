@@ -19,6 +19,7 @@
       <td>{{product.name}}</td>
       <td>{{product.price}}</td>
       <td>{{product.category.name}}</td>
+      <td><img src="{{product.image}}" alt="" style="width: 100px;height: 100px"></td>
       <td><button class="btn btn-primary"  data-toggle="modal" data-target="#exampleModal" [routerLink]="['/edit', product.id]">Sửa</button></td>
       <td><button class="btn btn-danger" (click)="deleteProduct(product.id)">Xóa</button></td>
     </tr>

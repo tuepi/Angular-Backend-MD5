@@ -4,7 +4,6 @@ import {UserToken} from "../models/user-token";
 import {BehaviorSubject, map, Observable} from "rxjs";
 import {environment} from "../../environments/environment";
 
-// @ts-ignore
 const API_URL = environment.apiUrl;
 
 @Injectable({

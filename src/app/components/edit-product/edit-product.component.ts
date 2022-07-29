@@ -26,6 +26,7 @@ export class EditProductComponent implements OnInit {
     name : new FormControl(),
     price : new FormControl(),
     category : new FormControl(),
+    // image :
   });
 
   ngOnInit(): void {
@@ -39,7 +40,8 @@ export class EditProductComponent implements OnInit {
           this.updateForm.patchValue({
             name: data.name,
             price: data.price,
-            category: data.category.id
+            category: data.category.id,
+            // image :
           })
         },
         error => {
@@ -54,7 +56,8 @@ export class EditProductComponent implements OnInit {
       price: this.updateForm.value.price,
       category: {
         id: this.updateForm.value.category,
-      }
+      },
+      // image :
     }
     this.productService.editProduct(this.id, this.product).subscribe(() => {
       this.router.navigateByUrl("/")

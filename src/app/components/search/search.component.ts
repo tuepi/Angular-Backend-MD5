@@ -18,6 +18,7 @@ export class SearchComponent implements OnInit {
 
   findByName(name: any) {
     this.productService.findByName(name).subscribe(result => {
+      console.log(result)
       this.products = result;
     });
   }

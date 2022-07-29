@@ -7,6 +7,7 @@ import {LoginComponent} from "./components/login/login.component";
 import {RegisterComponent} from "./components/register/register.component";
 import {AdminAuthGuard} from "./helper/admin-auth-guard";
 import {AuthGuard} from "./helper/auth-guard";
+import {NavbarComponent} from "./components/navbar/navbar.component";
 
 function AdminComponent() {
 
@@ -30,6 +31,10 @@ const routes: Routes = [
     path: 'register',
     component: RegisterComponent
   },
+  {
+    path: 'search',
+    component: NavbarComponent
+  }
   // {
   //   path: 'admin',
   //   canActivate: [AdminAuthGuard],
